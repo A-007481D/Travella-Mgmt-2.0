@@ -12,7 +12,7 @@
     <nav class="fixed w-full bg-white/90 backdrop-blur-md shadow-sm z-50">
         <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
             <div class="flex justify-between h-16 items-center">
-                <div class="flex items-center space-x-2">
+                <div class="flex items-center">
                     <span class="text-3xl font-bold text-blue-600">✈️</span>
                     <span class="text-2xl font-bold text-gray-800">Travella</span>
                 </div>
@@ -141,7 +141,7 @@
         <img src="img/foot.jpg" alt="Travel Scene" class="absolute inset-0 w-full h-full object-cover" />
         <div class="absolute inset-0 bg-black/60"></div>
         <div class="relative max-w-7xl mx-auto px-4 text-center text-white">
-            <h2 class="text-4xl font-bold mb-6">Ready for Your Next Adventure?</h2>
+            <h2 class="text-4xl font-bold mb-6">Ready for Your Next Adventure ? (❁´◡`❁)</h2>
             <p class="text-xl mb-8 max-w-2xl mx-auto">Join thousands of satisfied travelers who have discovered their dream destinations with us.</p>
             <button class="bg-blue-600 text-white px-8 py-3 rounded-full hover:bg-blue-700 transition-colors">
                 Start Planning Now

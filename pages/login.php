@@ -22,12 +22,16 @@
 <body class="bg-[#f0f0f0] bg-[url('img/bomok-bg.jpg')] bg-cover bg-no-repeat">
 <header class="bg-white shadow-md">
         <div class="container mx-auto px-4 py-4 flex justify-between items-center">
-            <a href="#" class="text-2xl font-bold text-gray-800">Victory</a>
+            <div class="flex items-center">
+                <span class="text-3xl font-bold text-blue-600">✈️</span>
+                <span class="text-2xl font-bold text-gray-800">Travella</span>
+            </div>
             <nav>
                 <ul class="flex space-x-6">
-                <li><a href="index.php" class="text-accent hover:text-red-400 transition-all duration-300 transform ">Accueil</a></li>
-                <li><a href="menu.php" class="text-accent hover:text-red-400 transition-all duration-300 transform ">Menus</a></li>
-                <li><a href="login.php" class="text-accent hover:text-red-400 transition-all duration-300 transform ">Login</a></li>
+                <a href="../index.php" class="text-gray-600 hover:text-blue-600 transition-colors">Home</a>
+                <a href="#" class="text-gray-600 hover:text-blue-600 transition-colors">Destinations</a>
+                <a href="#" class="text-gray-600 hover:text-blue-600 transition-colors">Packages</a>
+                <a href="#" class="text-gray-600 hover:text-blue-600 transition-colors">About</a>
                 </ul>
             </nav>
         </div>
