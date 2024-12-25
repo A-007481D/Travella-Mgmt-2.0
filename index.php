@@ -21,8 +21,8 @@
                     <a href="#" class="text-gray-600 hover:text-blue-600 transition-colors">Destinations</a>
                     <a href="#" class="text-gray-600 hover:text-blue-600 transition-colors">Packages</a>
                     <a href="#" class="text-gray-600 hover:text-blue-600 transition-colors">About</a>
-                    <button class="bg-blue-600 text-white px-6 py-2 rounded-full hover:bg-blue-700 transition-all transform hover:scale-105 duration-200">
-                        Login Now
+                    <button class="bg-blue-600 px-6 py-2 rounded-full hover:bg-blue-700 transition-all transform hover:scale-105 duration-200">
+                        <a href="./pages/login.php" class="text-white">Login Now</a>
                     </button>
                 </div>
             </div>
