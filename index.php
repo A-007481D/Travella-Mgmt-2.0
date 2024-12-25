@@ -9,20 +9,19 @@
 </head>
 <body class="bg-gray-50">
 
-    <nav class="fixed w-full bg-white/90 backdrop-blur-md shadow-sm z-50">
+<nav class="fixed w-full bg-white/90 backdrop-blur-md shadow-sm z-50">
         <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
             <div class="flex justify-between h-16 items-center">
                 <div class="flex items-center">
                     <span class="text-3xl font-bold text-blue-600">✈️</span>
-                    <span class="text-2xl font-bold text-gray-800">Travella</span>
+                    <span class="text-2xl font-bold text-gray-800">ActivityHub</span>
                 </div>
                 <div class="hidden md:flex items-center space-x-8">
-                    <a href="#" class="text-gray-600 hover:text-blue-600 transition-colors">Home</a>
-                    <a href="#" class="text-gray-600 hover:text-blue-600 transition-colors">Destinations</a>
-                    <a href="#" class="text-gray-600 hover:text-blue-600 transition-colors">Packages</a>
+                    <a href="index.php" class="text-gray-600 hover:text-blue-600 transition-colors">Home</a>
+                    <a href="pages/activities.php" class="text-gray-600 hover:text-blue-600 transition-colors">Activities</a>
                     <a href="#" class="text-gray-600 hover:text-blue-600 transition-colors">About</a>
                     <button class="bg-blue-600 px-6 py-2 rounded-full hover:bg-blue-700 transition-all transform hover:scale-105 duration-200">
-                        <a href="./pages/login.php" class="text-white">Login Now</a>
+                        <a href="pages/login.php" class="text-white">Sign In</a>
                     </button>
                 </div>
             </div>
