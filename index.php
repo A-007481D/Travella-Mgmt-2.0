@@ -138,7 +138,7 @@
     </section>
 
     <section class="relative py-20">
-        <img src="/api/placeholder/1920/600" alt="Travel Scene" class="absolute inset-0 w-full h-full object-cover" />
+        <img src="img/foot.jpg" alt="Travel Scene" class="absolute inset-0 w-full h-full object-cover" />
         <div class="absolute inset-0 bg-black/60"></div>
         <div class="relative max-w-7xl mx-auto px-4 text-center text-white">
             <h2 class="text-4xl font-bold mb-6">Ready for Your Next Adventure?</h2>
