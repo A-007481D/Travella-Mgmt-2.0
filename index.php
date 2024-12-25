@@ -8,7 +8,7 @@
     <script src="https://cdn.tailwindcss.com"></script>
 </head>
 <body class="bg-gray-50">
-    <!-- Navigation -->
+
     <nav class="fixed w-full bg-white/90 backdrop-blur-md shadow-sm z-50">
         <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
             <div class="flex justify-between h-16 items-center">
@@ -29,13 +29,12 @@
         </div>
     </nav>
 
-    <!-- Hero Section -->
     <div class="relative pt-16">
         <div class="min-h-screen flex items-center relative overflow-hidden">
             <img src="img/home.jpg" alt="Travel Destination" class="absolute inset-0 w-full h-full object-cover" />
             <div class="absolute inset-0 bg-black/50"></div>
-            <div class="relative max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 text-white py-32">
-                <h1 class="text-5xl md:text-6xl font-bold mb-6">
+            <div class="relative max-w-7xl ml-8 mt-[-5rem] px-4 sm:px-6 lg:px-8 text-white py-32">
+                <h1 class="text-5xl md:text-[6.5rem] font-bold mb-6">
                     Explore the World<br />
                     With Us
                 </h1>
@@ -54,15 +53,13 @@
         </div>
     </div>
 
-    <!-- Popular Destinations -->
     <section class="py-20 bg-white">
         <div class="max-w-7xl mx-auto px-4">
             <h2 class="text-4xl font-bold text-center mb-16">Popular Destinations</h2>
             <div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-8">
-                <!-- Destination Card 1 -->
                 <div class="group rounded-xl overflow-hidden shadow-lg hover:shadow-2xl transition-shadow duration-300">
-                    <div class="relative">
-                        <img src="/api/placeholder/400/300" alt="Bali" class="w-full h-64 object-cover group-hover:scale-105 transition-transform duration-300" />
+                    <div class="relative group-hover:scale-105 transition-transform duration-300">
+                        <img src="img/bali.jpg" alt="Bali" class="w-full h-64 object-cover " />
                         <div class="absolute bottom-0 left-0 right-0 p-4 bg-gradient-to-t from-black to-transparent">
                             <h3 class="text-white text-xl font-bold">Bali, Indonesia</h3>
                             <p class="text-white/80">From $899</p>
@@ -76,12 +73,11 @@
                     </div>
                 </div>
 
-                <!-- Destination Card 2 -->
                 <div class="group rounded-xl overflow-hidden shadow-lg hover:shadow-2xl transition-shadow duration-300">
-                    <div class="relative">
-                        <img src="/api/placeholder/400/300" alt="Paris" class="w-full h-64 object-cover group-hover:scale-105 transition-transform duration-300" />
+                    <div class="relative group-hover:scale-105 transition-transform duration-300">
+                        <img src="img/japan.jpg" alt="Paris" class="w-full h-64 object-cover" />
                         <div class="absolute bottom-0 left-0 right-0 p-4 bg-gradient-to-t from-black to-transparent">
-                            <h3 class="text-white text-xl font-bold">Paris, France</h3>
+                            <h3 class="text-white text-xl font-bold">Tokyo, Japan</h3>
                             <p class="text-white/80">From $1099</p>
                         </div>
                     </div>
@@ -93,10 +89,9 @@
                     </div>
                 </div>
 
-                <!-- Destination Card 3 -->
                 <div class="group rounded-xl overflow-hidden shadow-lg hover:shadow-2xl transition-shadow duration-300">
-                    <div class="relative">
-                        <img src="/api/placeholder/400/300" alt="Santorini" class="w-full h-64 object-cover group-hover:scale-105 transition-transform duration-300" />
+                    <div class="relative group-hover:scale-105 transition-transform duration-300">
+                        <img src="img/switzerland.jpg" alt="Santorini" class="w-full h-64 object-cover " />
                         <div class="absolute bottom-0 left-0 right-0 p-4 bg-gradient-to-t from-black to-transparent">
                             <h3 class="text-white text-xl font-bold">Santorini, Greece</h3>
                             <p class="text-white/80">From $1299</p>
@@ -113,7 +108,6 @@
         </div>
     </section>
 
-    <!-- Why Choose Us -->
     <section class="py-20 bg-gray-50">
         <div class="max-w-7xl mx-auto px-4">
             <h2 class="text-4xl font-bold text-center mb-16">Why Choose Voyage</h2>
@@ -143,7 +137,6 @@
         </div>
     </section>
 
-    <!-- Call to Action -->
     <section class="relative py-20">
         <img src="/api/placeholder/1920/600" alt="Travel Scene" class="absolute inset-0 w-full h-full object-cover" />
         <div class="absolute inset-0 bg-black/60"></div>
@@ -156,7 +149,6 @@
         </div>
     </section>
 
-    <!-- Footer -->
     <footer class="bg-gray-900 text-white py-12">
         <div class="max-w-7xl mx-auto px-4 grid grid-cols-1 md:grid-cols-4 gap-8">
             <div>
