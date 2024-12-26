@@ -1,4 +1,8 @@
-<?php require_once("../processes/activityProcess.php")?>
+<?php 
+require_once("../processes/activityProcess.php");
+session_start();
+
+?>
 <!DOCTYPE html>
 <html lang="en">
 <head>
@@ -19,9 +23,23 @@
                     <a href="../index.php" class="text-gray-600 hover:text-blue-600 transition-colors">Home</a>
                     <a href="activities.php" class="text-gray-600 hover:text-blue-600 transition-colors">Activities</a>
                     <a href="#" class="text-gray-600 hover:text-blue-600 transition-colors">About</a>
-                    <button class="bg-blue-600 px-6 py-2 rounded-full hover:bg-blue-700 transition-all transform hover:scale-105 duration-200">
-                        <a href="login.php" class="text-white">Sign In</a>
-                    </button>
+                    <?php
+                    if (!isset($_SESSION["client_email"])) {
+                        echo " <button class='bg-blue-600 px-6 py-2 rounded-full hover:bg-blue-700 transition-all transform hover:scale-105 duration-200'>
+                        <a href='pages/login.php' class='text-white'>Sign In</a>
+                    </button>";
+                    }else {
+                        if ($_SESSION["client_email"] === "admin@gmail.com") {
+                            echo " <button class='bg-blue-600 px-6 py-2 rounded-full hover:bg-blue-700 transition-all transform hover:scale-105 duration-200'>
+                        <a href='#' class='text-white'>admin</a>
+                    </button>";
+                        }else {
+                            echo " <button class='bg-blue-600 px-6 py-2 rounded-full hover:bg-blue-700 transition-all transform hover:scale-105 duration-200'>
+                        <a href='#' class='text-white'>client</a>
+                    </button>";
+                        }
+                    }
+                    ?>
                 </div>
             </div>
         </div>
@@ -228,12 +246,12 @@
                     <div class="flex items-center mb-4">
                         <img src="../img/eren.webp" alt="Reviewer" class="w-12 h-12 rounded-full mr-4"/>
                         <div>
-                            <h4 class="font-bold">Alex Thompson</h4>
+                            <h4 class="font-bold">Eren Yeager</h4>
                             <div class="text-yellow-400">★★★★★</div>
                         </div>
                     </div>
                     <p class="text-gray-600">
-                        "Amazing mountain biking experience! The guide was professional and the trails were perfect for all skill levels."
+                        "俺は進み続ける。この地獄のような道の先に何があろうとも"
                     </p>
                 </div>
                 <div class="bg-white p-6 rounded-xl shadow-lg">
@@ -245,7 +263,7 @@
                         </div>
                     </div>
                     <p class="text-gray-600">
-                        ""
+                    "Amazing mountain biking experience! The guide was professional and the trails were perfect for all skill levels."
                     </p>
                 </div>
             </div>

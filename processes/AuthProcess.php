@@ -2,8 +2,7 @@
 session_start();
 require_once '../config/dbconfig.php';
 class User extends Database {
-    public function __construct()
-    {
+    public function __construct(){
         $this->conn = $this->connect();
     }
 

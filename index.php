@@ -28,11 +28,11 @@
                     }else {
                         if ($_SESSION["client_email"] === "admin@gmail.com") {
                             echo " <button class='bg-blue-600 px-6 py-2 rounded-full hover:bg-blue-700 transition-all transform hover:scale-105 duration-200'>
-                        <a href='#' class='text-white'>admin</a>
+                        <a href='pages/superDashboard.php' class='text-white'>admin</a>
                     </button>";
                         }else {
                             echo " <button class='bg-blue-600 px-6 py-2 rounded-full hover:bg-blue-700 transition-all transform hover:scale-105 duration-200'>
-                        <a href='#' class='text-white'>client</a>
+                        <a href='pages/profile.php' class='text-white'>client</a>
                     </button>";
                         }
                     }
