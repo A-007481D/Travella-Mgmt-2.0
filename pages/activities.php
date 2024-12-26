@@ -10,9 +10,9 @@
     <nav class="fixed w-full bg-white/90 backdrop-blur-md shadow-sm z-50">
         <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
             <div class="flex justify-between h-16 items-center">
-                <div class="flex items-center">
+                <div class="flex items-center space-x-2">
                     <span class="text-3xl font-bold text-blue-600">✈️</span>
-                    <span class="text-2xl font-bold text-gray-800">Travella</span>
+                    <span class="text-2xl font-bold text-blue-800">Travella</span>
                 </div>
                 <div class="hidden md:flex items-center space-x-8">
                     <a href="../index.php" class="text-gray-600 hover:text-blue-600 transition-colors">Home</a>
@@ -38,7 +38,7 @@
                 <p class="text-xl mb-8 max-w-2xl">
                     Find and book the best local experiences, guided tours, and exciting activities in your area.
                 </p>
-            </div>
+            </div>mahdiiiii
         </div>
     </div>
 
@@ -247,8 +247,11 @@
                         "Bad mountain hiking experience! The guide was unprofessional."
                     </p>
                 </div>
+            </div>
+        </div>
+    </section>
                 
-                <footer class="bg-gray-900 text-white py-12">
+        <footer class="bg-gray-900 text-white py-12">
         <div class="max-w-7xl mx-auto px-4 grid grid-cols-1 md:grid-cols-4 gap-8">
             <div>
                 <div class="flex items-center space-x-2 mb-4">
