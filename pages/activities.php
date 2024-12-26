@@ -244,7 +244,7 @@
                         </div>
                     </div>
                     <p class="text-gray-600">
-                        "ach had 9lawi hada makat3arfo diro ta 9alwa nmchi japon bi 1000$ nbi3 9alwa ana."
+                        ""
                     </p>
                 </div>
             </div>
