@@ -1,4 +1,4 @@
-<?php require_once '../processes/loginProcess.php'; ?>
+<?php require_once '../processes/AuthProcess.php'; ?>
 
 <!DOCTYPE html>
 <html lang="en">

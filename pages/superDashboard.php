@@ -1,11 +1,11 @@
-<?php require_once '../processes/userProcess.php'; ?>
+
 
 <!DOCTYPE html>
 <html lang="en">
 <head>
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <title>Admin Side</title>
+  <title>Super Admin Side</title>
   <script src="https://cdn.tailwindcss.com"></script>
 </head>
 <body class="bg-gray-100 font-sans">
@@ -20,21 +20,21 @@
             <li class="text-gray-700 hover:text-[#2b62e3] cursor-pointer">🏠 Home</li>
         </a>
 
-        <a class="text-gray-700 hover:text-[#2b62e3] cursor-pointer" href="./manageReservations.php">
-            <li class="text-gray-700 hover:text-[#2b62e3] cursor-pointer">📜 Reservations</li>
+        <a class="text-gray-700 hover:text-[#2b62e3] cursor-pointer" href="">
+            <li class="text-[#2b62e3] font-bold">📜 Reservations</li>
         </a>
     
-        <a class="text-gray-700 hover:text-[#2b62e3] cursor-pointer" href="./manageActivities.php">
+        <a class="text-gray-700 hover:text-[#2b62e3] cursor-pointer" href="">
             <li class="text-gray-700 hover:text-[#2b62e3] cursor-pointer">Activities</li>
         </a>
 
-        <a class="text-gray-700 hover:text-[#2b62e3] cursor-pointer" href="./manageUsers.php">
-            <li class="text-[#2b62e3] font-bold">Manage Users</li>
+        <a class="text-gray-700 hover:text-[#2b62e3] cursor-pointer" href="">
+            <li class="text-gray-700 hover:text-[#2b62e3] cursor-pointer">Manage Users</li>
         </a>
 
       </ul>
       <div class="p-4 border-t border-gray-700 mt-[26rem]">
-        <a href="../processes/logout.php">
+        <a href="../../auth/logout.php">
             <button class="w-full px-4 py-2 bg-opacity-70 bg-[#2b62e3] rounded hover:bg-[#2b62e3]">Logout</button>
         </a>
     </div>
@@ -42,7 +42,7 @@
 
     <main class="flex-1 px-6 py-4 overflow-y-auto bg-gray-50">
   <header class="mb-4">
-    <h1 class="text-2xl font-bold text-gray-800">Admin Dashboard</h1>
+    <h1 class="text-2xl font-bold text-gray-800">Super Admin Dashboard</h1>
   </header>
 
   <section class="grid grid-cols-1 md:grid-cols-3 gap-6 mb-6">
@@ -83,12 +83,11 @@
     <table class="w-full text-left border-collapse">
         <thead>
             <tr>
-                <th class="p-2 border-b">Booking ID</th>
-                <th class="p-2 border-b">Client</th>
-                <th class="p-2 border-b">Activity</th>
-                <th class="p-2 border-b">Booking Date</th>
-                <th class="p-2 border-b">Status</th>
-                <th class="p-2 border-b">Booked At</th>
+                <th class="p-2 border-b">User ID</th>
+                <th class="p-2 border-b">First Name</th>
+                <th class="p-2 border-b">Last Name</th>
+                <th class="p-2 border-b">Email</th>
+                <th class="p-2 border-b">Number</th>
                 <th class="p-2 border-b">Actions</th>
             </tr>
         </thead>
@@ -116,21 +115,24 @@
             while ($row = mysqli_fetch_assoc($result)):
             ?>
                 <tr>
-                    <td class="p-2 border-b"><?= $row['BookingID']; ?></td>
-                    <td class="p-2 border-b"><?= $row['FirstName']; ?></td>
-                    <td class="p-2 border-b"><?= $row['MenuName']; ?></td>
-                    <td class="p-2 border-b"><?= $row['BookingDate']; ?></td>
-                    <td class="p-2 border-b"><?= $row['NumberOfPeople']; ?></td>
-                    <td class="p-2 border-b"><?= $row['Status']; ?></td>
-                    <td class="p-2 border-b"><?= $row['CreatedAt']; ?></td>
+                    <td class="p-2 border-b"><?= $row['id_client']; ?></td>
+                    <td class="p-2 border-b"><?= $row['first_name']; ?></td>
+                    <td class="p-2 border-b"><?= $row['last_name']; ?></td>
+                    <td class="p-2 border-b"><?= $row['email']; ?></td>
+                    <td class="p-2 border-b"><?= $row['number']; ?></td>
+                    <td class="p-2 border-b"><?= $row['date_of_birth']; ?></td>
                     <td class="p-2 border-b">
-                        <form action="../../update_reservation.php" method="POST" class="inline-block">
-                            <input type="hidden" name="booking_id" value="<?= $row['BookingID']; ?>">
-                            <button type="submit" name="action" value="approve" class="px-4 py-1 bg-green-500 text-white rounded">Approve</button>
+                        <form action="#action" method="POST" class="inline-block">
+                            <input type="hidden" name="booking_id" value="<?= $row['id_client']; ?>">
+                            <button type="submit" name="action" value="approve" class="px-4 py-1 bg-green-500 text-white rounded">Archive</button>
                         </form>
-                        <form action="../../update_reservation.php" method="POST" class="inline-block ml-2">
-                            <input type="hidden" name="booking_id" value="<?= $row['BookingID']; ?>">
-                            <button type="submit" name="action" value="reject" class="px-4 py-1 bg-red-500 text-white rounded">Cancel</button>
+                        <form action="#action" method="POST" class="inline-block ml-2">
+                            <input type="hidden" name="booking_id" value="<?= $row['id_client']; ?>">
+                            <button type="submit" name="action" value="reject" class="px-4 py-1 bg-red-500 text-white rounded">Ban</button>
+                        </form>
+                        <form action="#action" method="POST" class="inline-block ml-2">
+                            <input type="hidden" name="booking_id" value="<?= $row['id_client']; ?>">
+                            <button type="submit" name="action" value="reject" class="px-4 py-1 bg-red-500 text-white rounded">Promote</button>
                         </form>
                     </td>
                 </tr>
