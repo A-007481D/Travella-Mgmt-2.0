@@ -38,7 +38,7 @@
                 <p class="text-xl mb-8 max-w-2xl">
                     Find and book the best local experiences, guided tours, and exciting activities in your area.
                 </p>
-            </div>
+            </div>mahdiiiii
         </div>
     </div>
 
