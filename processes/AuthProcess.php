@@ -16,7 +16,11 @@ class User extends Database {
         $stmt->bindParam(':email', $email);
         $stmt->bindParam(':number', $number);
         $stmt->bindParam(':password', $hashpassword);
-        $stmt->execute();
+        $result = $stmt->execute();
+        if ($result) {
+            header("location: ../pages/login.php");
+        }
+
     }
 
     public function Login($email, $password){
@@ -31,9 +35,10 @@ class User extends Database {
                 $_SESSION["client_password"] = $result["password"];
                 if ($email === 'admin@gmail.com') {
                     $_SESSION["admin"] = true;
-                    header("location: ../pages/dashboard.php");
+                    header("location: ../index.php");
                 }else {
                     $_SESSION["admin"] = false;
+                    header("location: ../index.php");
                 }
             }
         }
@@ -48,8 +53,13 @@ if ($_SERVER["REQUEST_METHOD"] == "POST") {
     $password_login = $_POST["password_login"];
     $email_login = $_POST["email_login"];
 
-    $registre = new User();
-    $registre->Registerdata($name, $prenom, $email, $number, $password);
-    echo $registre->Login($email_login, $password_login);
+    if (isset($name, $prenom, $email, $number, $password)) {
+        $registre = new User();
+        $registre->Registerdata($name, $prenom, $email, $number, $password);
+    }
+    if (isset($email_login, $password_login)) {
+        $registre = new User();
+        $registre->Login($email_login, $password_login);
+    }
 }
  ?>

@@ -8,7 +8,6 @@ class Database {
     public function connect() {
         try{
             $this->conn = new PDO("mysql:host=$this->host;dbname=$this->dbname", $this->servername, $this->pass);
-            echo 'you are connected';
             return $this->conn;
         }
         catch(PDOException $e){

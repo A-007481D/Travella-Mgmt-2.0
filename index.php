@@ -1,4 +1,4 @@
-
+<?php session_start(); ?>
 <!DOCTYPE html>
 <html lang="en">
 <head>
@@ -20,9 +20,24 @@
                     <a href="index.php" class="text-gray-600 hover:text-blue-600 transition-colors">Home</a>
                     <a href="pages/activities.php" class="text-gray-600 hover:text-blue-600 transition-colors">Activities</a>
                     <a href="#" class="text-gray-600 hover:text-blue-600 transition-colors">About</a>
-                    <button class="bg-blue-600 px-6 py-2 rounded-full hover:bg-blue-700 transition-all transform hover:scale-105 duration-200">
-                        <a href="pages/login.php" class="text-white">Sign In</a>
-                    </button>
+                    <?php
+                    if (!isset($_SESSION["client_email"])) {
+                        echo " <button class='bg-blue-600 px-6 py-2 rounded-full hover:bg-blue-700 transition-all transform hover:scale-105 duration-200'>
+                        <a href='pages/login.php' class='text-white'>Sign In</a>
+                    </button>";
+                    }else {
+                        if ($_SESSION["client_email"] === "admin@gmail.com") {
+                            echo " <button class='bg-blue-600 px-6 py-2 rounded-full hover:bg-blue-700 transition-all transform hover:scale-105 duration-200'>
+                        <a href='#' class='text-white'>admin</a>
+                    </button>";
+                        }else {
+                            echo " <button class='bg-blue-600 px-6 py-2 rounded-full hover:bg-blue-700 transition-all transform hover:scale-105 duration-200'>
+                        <a href='#' class='text-white'>client</a>
+                    </button>";
+                        }
+                    }
+                    ?>
+                   
                 </div>
             </div>
         </div>
