@@ -14,7 +14,6 @@ class Database {
         catch(PDOException $e){
             echo 'err :' . $e->getMessage();
         }
-        
     }
 }
 $conn = new Database();

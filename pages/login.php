@@ -1,4 +1,4 @@
-<?php require_once("../config/dbconfig.php")?>
+<?php require_once("../processes/loginProcess.php")?>
 <!DOCTYPE html>
 <html lang="en">
 <head>
@@ -59,7 +59,7 @@
                         Welcome Back
                     </h2>
                     
-                    <form method="POST" action="loginback.php" class="space-y-6">
+                    <form method="POST" action="../processes/loginProcess.php" class="space-y-6">
                         <div>
                             <label class="block text-gray-700 text-sm font-semibold mb-2">Email</label>
                             <input type="email" name="email_login" class="w-full px-4 py-3 rounded-lg bg-gray-50 border border-gray-200 focus:border-blue-500 focus:bg-white focus:outline-none transition duration-200" placeholder="Enter your email">
@@ -112,7 +112,7 @@
                         Create Account
                     </h2>
                     
-                    <form method="POST" class="space-y-6">
+                    <form method="POST" action="../processes/registerProcess.php" class="space-y-6">
                         <div class="grid grid-cols-2 gap-4">
                             <div>
                                 <label class="block text-gray-700 text-sm font-semibold mb-2">First Name</label>
@@ -129,6 +129,11 @@
                             <input name="email" type="email" class="w-full px-4 py-3 rounded-lg bg-gray-50 border border-gray-200 focus:border-blue-500 focus:bg-white focus:outline-none transition duration-200" placeholder="Enter your email">
                         </div>
                         
+                        <div>
+                            <label class="block text-gray-700 text-sm font-semibold mb-2">number</label>
+                            <input name="number" type="number" class="w-full px-4 py-3 rounded-lg bg-gray-50 border border-gray-200 focus:border-blue-500 focus:bg-white focus:outline-none transition duration-200" placeholder="Enter your number">
+                        </div>
+
                         <div>
                             <label class="block text-gray-700 text-sm font-semibold mb-2">Password</label>
                             <input type="password" class="w-full px-4 py-3 rounded-lg bg-gray-50 border border-gray-200 focus:border-blue-500 focus:bg-white focus:outline-none transition duration-200" placeholder="Create password">

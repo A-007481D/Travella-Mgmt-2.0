@@ -6,7 +6,7 @@ CREATE TABLE client (
     last_name varchar(100),
     email varchar(150) UNIQUE,
     number varchar(15),
-    address text,
+    password varchar(150),
     date_of_birth date
 );
 CREATE TABLE activite (
