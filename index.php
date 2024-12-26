@@ -4,7 +4,7 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Voyage - Discover Your Next Adventure</title>
+    <title>Travella - Discover Your Next Adventure</title>
     <script src="https://cdn.tailwindcss.com"></script>
 </head>
 <body class="bg-gray-50">
@@ -14,7 +14,7 @@
             <div class="flex justify-between h-16 items-center">
                 <div class="flex items-center">
                     <span class="text-3xl font-bold text-blue-600">✈️</span>
-                    <span class="text-2xl font-bold text-gray-800">ActivityHub</span>
+                    <span class="text-2xl font-bold text-gray-800">Travella</span>
                 </div>
                 <div class="hidden md:flex items-center space-x-8">
                     <a href="index.php" class="text-gray-600 hover:text-blue-600 transition-colors">Home</a>
@@ -109,7 +109,7 @@
 
     <section class="py-20 bg-gray-50">
         <div class="max-w-7xl mx-auto px-4">
-            <h2 class="text-4xl font-bold text-center mb-16">Why Choose Voyage</h2>
+            <h2 class="text-4xl font-bold text-center mb-16">Why Choose Travella</h2>
             <div class="grid grid-cols-1 md:grid-cols-3 gap-12">
                 <div class="text-center group">
                     <div class="w-16 h-16 bg-blue-100 rounded-full flex items-center justify-center mx-auto mb-6 group-hover:bg-blue-200 transition-colors">
@@ -153,7 +153,7 @@
             <div>
                 <div class="flex items-center space-x-2 mb-4">
                     <span class="text-3xl">✈️</span>
-                    <span class="text-2xl font-bold">Voyage</span>
+                    <span class="text-2xl font-bold">Travella</span>
                 </div>
                 <p class="text-gray-400">Your trusted travel companion</p>
             </div>
@@ -172,7 +172,7 @@
                     <li>123 Travel Street</li>
                     <li>New York, NY 10001</li>
                     <li>Phone: (555) 123-4567</li>
-                    <li>Email: info@voyage.com</li>
+                    <li>Email: info@travella.com</li>
                 </ul>
             </div>
             <div>

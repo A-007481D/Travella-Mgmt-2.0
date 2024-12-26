@@ -3,7 +3,7 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>ActivityHub - Book Your Next Adventure</title>
+    <title>Travella - Book Your Next Adventure</title>
     <script src="https://cdn.tailwindcss.com"></script>
 </head>
 <body class="bg-gray-50">
@@ -12,7 +12,7 @@
             <div class="flex justify-between h-16 items-center">
                 <div class="flex items-center">
                     <span class="text-3xl font-bold text-blue-600">✈️</span>
-                    <span class="text-2xl font-bold text-gray-800">ActivityHub</span>
+                    <span class="text-2xl font-bold text-gray-800">Travella</span>
                 </div>
                 <div class="hidden md:flex items-center space-x-8">
                     <a href="../index.php" class="text-gray-600 hover:text-blue-600 transition-colors">Home</a>
@@ -244,7 +244,7 @@
                         </div>
                     </div>
                     <p class="text-gray-600">
-                        "ach had 9lawi hada makat3arfo diro ta 9alwa nmchi japon bi 1000$ nbi3 9alwa ana."
+                        "Bad mountain hiking experience! The guide was unprofessional."
                     </p>
                 </div>
                 
@@ -253,7 +253,7 @@
             <div>
                 <div class="flex items-center space-x-2 mb-4">
                     <span class="text-3xl">✈️</span>
-                    <span class="text-2xl font-bold">Voyage</span>
+                    <span class="text-2xl font-bold">Travella</span>
                 </div>
                 <p class="text-gray-400">Your trusted travel companion</p>
             </div>
@@ -272,7 +272,7 @@
                     <li>123 Travel Street</li>
                     <li>New York, NY 10001</li>
                     <li>Phone: (555) 123-4567</li>
-                    <li>Email: info@voyage.com</li>
+                    <li>Email: info@travella.com</li>
                 </ul>
             </div>
             <div>

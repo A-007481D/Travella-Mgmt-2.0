@@ -5,7 +5,7 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>ActivityHub - Authentication</title>
+    <title>Travella - Authentication</title>
     <script src="https://cdn.tailwindcss.com"></script>
     <script>
         tailwind.config = {
@@ -27,7 +27,7 @@
                 <div class="flex items-center space-x-2">
                     <span class="text-3xl">✈️</span>
                     <span class="text-2xl font-bold bg-gradient-to-r from-blue-600 to-blue-800 bg-clip-text text-transparent">
-                        ActivityHub
+                        Travella
                     </span>
                 </div>
                 <div class="hidden md:flex items-center space-x-8">
@@ -181,7 +181,7 @@
             <div>
                 <div class="flex items-center space-x-2 mb-4">
                     <span class="text-3xl">✈️</span>
-                    <span class="text-2xl font-bold">Voyage</span>
+                    <span class="text-2xl font-bold">Travella</span>
                 </div>
                 <p class="text-gray-400">Your trusted travel companion</p>
             </div>
@@ -200,7 +200,7 @@
                     <li>123 Travel Street</li>
                     <li>New York, NY 10001</li>
                     <li>Phone: (555) 123-4567</li>
-                    <li>Email: info@voyage.com</li>
+                    <li>Email: info@travella.com</li>
                 </ul>
             </div>
             <div>
