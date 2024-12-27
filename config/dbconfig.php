@@ -18,5 +18,5 @@ class Database {
     }
 }
 $conn = new Database();
-$conn->connect();
+$db = $conn->connect();
 ?>

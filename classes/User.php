@@ -19,14 +19,11 @@ abstract class User
         $this->role = $role;
     }
 
-    public function register() {
+    abstract public function register($db);
 
-    }
-    public function logout() {
+    abstract public function logout();
 
-    }
+    abstract public function login($db);
 
-    public function login() {
-
-    }
+    
 }
