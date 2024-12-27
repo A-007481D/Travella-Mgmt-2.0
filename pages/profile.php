@@ -1,4 +1,4 @@
-
+<?php session_start(); ?>
 
 <!DOCTYPE html>
 <html lang="en">
@@ -28,9 +28,9 @@
             <button class="block px-4 py-2 bg-blue-700 rounded hover:bg-blue-600">Add Guest</button> -->
         </nav>
         <div class="p-4 border-t border-gray-700">
-            <a href="index.html">
+            <form method="POST" action="../processes/logout.php">
                 <button class="w-full px-4 py-2 bg-blue-500 rounded hover:bg-blue-600">Logout</button>
-            </a>
+            </form>
         </div>
     </aside>
         <main class="flex-grow bg-[#f2f6fa] overflow-auto">

@@ -1,1 +1,4 @@
-<?php require_once '../config/dbconfig.php'; ?>
+<?php 
+require_once '../config/dbconfig.php';
+
+?>
