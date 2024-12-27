@@ -48,7 +48,7 @@ class Activities extends Database{
                     </div>
                     <p class="text-gray-600 mb-6">' . $result["description"] . '</p>
                     <div class="flex gap-3">
-                    <form method="POST" action="../processes/activityProcess.php">
+                    <form method="POST" action="../processes/reservationProcess.php">
                         <input name = "id_activities" type="hidden" value="'.$result["id_activite"].'">
                         <input name = "id_client" type="hidden" value="'. $client_id .'">
                         <button type="submit" class="flex-1 bg-blue-600 text-white w-[5rem] py-2.5 rounded-xl hover:bg-blue-700 transition-colors">
@@ -63,14 +63,7 @@ class Activities extends Database{
             </div>';
         }
     }
-    public function AddReservation($id_client, $id_activities){
-        $sql = "INSERT INTO reservation (id_client, id_activite) VALUES (:id_client, :id_activities)";
-        $stmt = $this->conn->prepare($sql);
-        $stmt->bindParam(':id_client', $id_client);
-        $stmt->bindParam(':id_activities', $id_activities);
-        $stmt->execute();
-        header("location: ../pages/activities.php");
-    }
+
 }
 
 if ($_SERVER["REQUEST_METHOD"] === "POST") {
@@ -81,16 +74,9 @@ if ($_SERVER["REQUEST_METHOD"] === "POST") {
     $date_start = $_POST["date_start"];
     $date_fin = $_POST["date_fin"];
     $places_desponsibles = $_POST["available_places"];
-    $id_act = $_POST["id_activities"];
-    $id_cl = $_POST["id_client"];
     if (isset($name, $image, $description, $price, $date_start, $date_fin, $places_desponsibles)){
         $activitiesInserted = new Activities();
         $activitiesInserted->Addactivities($name, $image, $description, $price, $date_start, $date_fin, $places_desponsibles);
-    }
-    if (isset($id_cl, $id_act)) {
-        $addreservation = new Activities();
-        $addreservation->AddReservation($id_cl, $id_act);
-    }
-
+}
 }
 ?>

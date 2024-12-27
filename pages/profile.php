@@ -1,3 +1,4 @@
+<?php require_once '../processes/reservationProcess.php'; ?>
 <!DOCTYPE html>
 <html lang="en">
 <head>
@@ -16,17 +17,17 @@
             
             <nav class="mt-6 px-6">
                 <div class="space-y-4">
-                    <a href="index.php" class="flex items-center px-4 py-2 text-gray-700 hover:bg-blue-50 hover:text-blue-600 rounded-lg transition-colors">
+                    <a href="../index.php" class="flex items-center px-4 py-2 text-gray-700 hover:bg-blue-50 hover:text-blue-600 rounded-lg transition-colors">
                         <span class="mr-3">🏠</span>
                         Home
                     </a>
                     <a href="#" class="flex items-center px-4 py-2 bg-blue-50 text-blue-600 rounded-lg transition-colors">
                         <span class="mr-3">📅</span>
-                        My Reservations
+                        Reservations
                     </a>
-                    <a href="#" class="flex items-center px-4 py-2 text-gray-700 hover:bg-blue-50 hover:text-blue-600 rounded-lg transition-colors">
-                        <span class="mr-3">⭐</span>
-                        Favorite Activities
+                    <a href="activities.php" class="flex items-center px-4 py-2 text-gray-700 hover:bg-blue-50 hover:text-blue-600 rounded-lg transition-colors">
+                        <span class="mr-3">🗺️</span>
+                        Activities
                     </a>
                     <a href="#" class="flex items-center px-4 py-2 text-gray-700 hover:bg-blue-50 hover:text-blue-600 rounded-lg transition-colors">
                         <span class="mr-3">👤</span>
@@ -36,7 +37,7 @@
             </nav>
 
             <div class="absolute bottom-0 w-64 p-4 border-t border-gray-200">
-                <form method="POST" action="processes/logout.php">
+                <form method="POST" action="../processes/logout.php">
                     <button class="w-full px-4 py-2 bg-red-500 text-white rounded-lg hover:bg-red-600 transition-colors">
                         Logout
                     </button>
@@ -82,51 +83,16 @@
                                 <tr class="bg-gray-50">
                                     <th class="text-left p-4 border-b">Reservation ID</th>
                                     <th class="text-left p-4 border-b">Activity</th>
-                                    <th class="text-left p-4 border-b">Date</th>
-                                    <th class="text-left p-4 border-b">Status</th>
+                                    <th class="text-left p-4 border-b">Date start</th>
+                                    <th class="text-left p-4 border-b">Date End</th>
                                     <th class="text-left p-4 border-b">Price</th>
+                                    <th class="text-left p-4 border-b">Status</th>
                                     <th class="text-left p-4 border-b">Actions</th>
                                 </tr>
                             </thead>
                             <tbody>
-                                <tr class="border-b hover:bg-gray-50">
-                                    <td class="p-4">#12345</td>
-                                    <td class="p-4">Mountain Hiking</td>
-                                    <td class="p-4">2024-12-28</td>
-                                    <td class="p-4">
-                                        <span class="px-2 py-1 bg-green-100 text-green-800 rounded-full text-sm">
-                                            Confirmed
-                                        </span>
-                                    </td>
-                                    <td class="p-4">$125.00</td>
-                                    <td class="p-4 space-x-2">
-                                        <button class="px-3 py-1 bg-blue-500 text-white rounded hover:bg-blue-600 transition-colors">
-                                            View Details
-                                        </button>
-                                        <button class="px-3 py-1 bg-red-500 text-white rounded hover:bg-red-600 transition-colors">
-                                            Cancel
-                                        </button>
-                                    </td>
-                                </tr>
-                                <tr class="border-b hover:bg-gray-50">
-                                    <td class="p-4">#12346</td>
-                                    <td class="p-4">Beach Resort</td>
-                                    <td class="p-4">2024-12-30</td>
-                                    <td class="p-4">
-                                        <span class="px-2 py-1 bg-yellow-100 text-yellow-800 rounded-full text-sm">
-                                            Pending
-                                        </span>
-                                    </td>
-                                    <td class="p-4">$250.00</td>
-                                    <td class="p-4 space-x-2">
-                                        <button class="px-3 py-1 bg-blue-500 text-white rounded hover:bg-blue-600 transition-colors">
-                                            View Details
-                                        </button>
-                                        <button class="px-3 py-1 bg-red-500 text-white rounded hover:bg-red-600 transition-colors">
-                                            Cancel
-                                        </button>
-                                    </td>
-                                </tr>
+                                <?php $afficheRes = new Reservation();
+                                $afficheRes->AfficheReservation(); ?>
                             </tbody>
                         </table>
                     </div>

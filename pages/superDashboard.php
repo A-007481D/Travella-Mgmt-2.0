@@ -26,7 +26,7 @@
                         <span class="mr-3">📜</span>
                         Reservations
                     </a>
-                    <a href="#" class="flex items-center px-4 py-2 text-gray-700 hover:bg-blue-50 hover:text-blue-600 rounded-lg transition-colors">
+                    <a href="activities.php" class="flex items-center px-4 py-2 text-gray-700 hover:bg-blue-50 hover:text-blue-600 rounded-lg transition-colors">
                         <span class="mr-3">🎯</span>
                         Activities
                     </a>
