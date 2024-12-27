@@ -53,12 +53,12 @@ if ($_SERVER["REQUEST_METHOD"] == "POST") {
     $email_login = $_POST["email_login"];
 
     if (isset($name, $prenom, $email, $number, $password)) {
-        $registre = new User();
-        $registre->Registerdata($name, $prenom, $email, $number, $password);
+        $register = new User();
+        $register->Registerdata($name, $prenom, $email, $number, $password);
     }
     if (isset($email_login, $password_login)) {
-        $registre = new User();
-        $registre->Login($email_login, $password_login);
+        $register = new User();
+        $register->Login($email_login, $password_login);
     }
 }
  ?>
