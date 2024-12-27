@@ -1,7 +1,3 @@
-<<<<<<< HEAD
-
-<?php echo "hello world"; ?>
-=======
 <?php session_start(); ?>
 <!DOCTYPE html>
 <html lang="en">
@@ -208,4 +204,3 @@
     </footer>
 </body>
 </html>
->>>>>>> 7add03f2776cbe3e35fe7f33f947d829aa205c73

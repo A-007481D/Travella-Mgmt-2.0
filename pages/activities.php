@@ -1,6 +1,3 @@
-<<<<<<< HEAD
-<?php require_once '../processes/activityProcess.php'; ?>
-=======
 <?php 
 require_once("../processes/activityProcess.php");
 session_start();
@@ -312,4 +309,3 @@ session_start();
             </div>
         </div>
     </footer>
->>>>>>> 7add03f2776cbe3e35fe7f33f947d829aa205c73

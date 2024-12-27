@@ -25,8 +25,14 @@ CREATE TABLE reservation (
     id_client int(11),
     id_activite int(11),
     reservation_date TIMESTAMP DEFAULT CURRENT_TIMESTAMP,
-    statu enum('En attent', 'Confirmée', 'Annulée'),
+    status enum('En attent', 'Confirmée', 'Annulée') ,
     FOREIGN KEY (id_client) REFERENCES client(id_client),
     FOREIGN KEY (id_activite) REFERENCES activite(id_activite) 
 );
 
+CREATE TABLE role (
+    id int AUTO_INCREMENT PRIMARY KEY,
+    id_client int(11),
+    role enum('visiteur', 'client', 'admin') DEFAULT 'visiteur';
+    FOREIGN KEY (id_client) REFERENCES client(id_client)
+)

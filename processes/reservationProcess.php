@@ -1,6 +1,3 @@
-<<<<<<< HEAD
-<?php require_once '../config/dbconfig.php'; ?>
-=======
 <?php require_once '../config/dbconfig.php';
 session_start();
 class Reservation extends User{
@@ -19,4 +16,3 @@ class Reservation extends User{
     }
 }
 ?>
->>>>>>> 7add03f2776cbe3e35fe7f33f947d829aa205c73
