@@ -1,4 +1,4 @@
-<?php 
+<?php
 require_once '../config/dbconfig.php';
 class Activities extends Database{
     public function __construct(){
@@ -21,9 +21,50 @@ class Activities extends Database{
         }
     }
 
-    public function AfficheActivities(){
-        
+    public function AfficheActivities($client_id){
+        $sql = "SELECT * FROM activite";
+        $stmt  = $this->conn->prepare($sql);
+        $stmt->execute();
+        while ($result = $stmt->fetch(PDO::FETCH_ASSOC)) {
+            echo '
+            <div class="group rounded-xl overflow-hidden shadow-lg hover:shadow-2xl transition-all duration-300">
+                <div class="relative">
+                    <img src="' . $result["img"] . '" alt="Mountain Biking" class="w-full h-64 object-cover transform group-hover:scale-105 transition-transform duration-300" />
+                    <div class="absolute top-4 right-4 bg-white/90 backdrop-blur-sm px-3 py-1 rounded-full">
+                        <span class="text-blue-600 font-semibold">' . $result["price"] . '/person</span>
+                    </div>
+                </div>
+                <div class="p-6 bg-white">
+                    <div class="flex justify-between items-start mb-4">
+                        <div>
+                            <h3 class="text-xl font-bold text-gray-900">' . $result["name"] . '</h3>
+                            <p class="text-gray-500">' . $result["description"] . '</p>
+                        </div>
+                    </div>
+                    <div class="flex items-center gap-4 text-sm text-gray-500 mb-4">
+                        <span>⏰ ' . $result["date_start"] . ' - ' . $result["date_fin"] . '</span>
+                        <span>👥 Max ' . $result["places_desponsibles"] . ' people</span>
+                        <span class="text-yellow-400">★★★★★</span>
+                    </div>
+                    <p class="text-gray-600 mb-6">' . $result["description"] . '</p>
+                    <div class="flex gap-3">
+                    <form method="POST" action="../processes/activityProcess.php">
+                        <input type="" value="'.$result["id_activite"].'">
+                        <input type="" value="'. $client_id .'">
+                        <button type="submit" class="flex-1 bg-blue-600 text-white w-[5rem] py-2.5 rounded-xl hover:bg-blue-700 transition-colors">
+                            Book Now
+                        </button>
+                    </form>
+                        <button class="px-4 py-2.5 border border-blue-600 text-blue-600 rounded-xl hover:bg-blue-50 transition-colors">
+                            Details
+                        </button>
+                    </div>
+                </div>
+            </div>';
+        }
     }
+
+    
 }
 
 if ($_SERVER["REQUEST_METHOD"] === "POST") {
