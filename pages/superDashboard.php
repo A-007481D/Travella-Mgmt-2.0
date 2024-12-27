@@ -128,36 +128,99 @@
                         ✕
                     </button>
                 </div>
-                <form class="space-y-4">
-                    <div>
-                        <label class="block text-sm font-medium mb-1">Activity Name</label>
-                        <input type="text" class="w-full p-2 border rounded-lg focus:ring-2 focus:ring-blue-500 outline-none" 
-                               placeholder="Enter activity name">
+                <form method="POST" action="../processes/activityProcess.php" class="space-y-6">
+                    <div class="space-y-4">
+                        <label class="block text-sm font-medium text-gray-700 mb-1">Activity Name</label>
+                        <input 
+                            type="text" 
+                            name="activity_name"
+                            class="w-full px-4 py-2 border border-gray-200 rounded-lg focus:ring-2 focus:ring-[#2b62e3] focus:border-[#2b62e3] transition-colors duration-200"
+                            placeholder="Enter activity name"
+                            required
+                        >
+                        <label class="block text-sm font-medium text-gray-700 mb-1">Activity picture</label>
+                        <input 
+                            type="text" 
+                            name="activity_img"
+                            class="w-full px-4 py-2 border border-gray-200 rounded-lg focus:ring-2 focus:ring-[#2b62e3] focus:border-[#2b62e3] transition-colors duration-200"
+                            placeholder="Enter activity name"
+                            required
+                        >
                     </div>
                     <div>
-                        <label class="block text-sm font-medium mb-1">Description</label>
-                        <textarea class="w-full p-2 border rounded-lg focus:ring-2 focus:ring-blue-500 outline-none" 
-                                  rows="3" placeholder="Enter activity description"></textarea>
+                        <label class="block text-sm font-medium text-gray-700 mb-1">Description</label>
+                        <textarea 
+                            name="description"
+                            rows="4"
+                            class="w-full px-4 py-2 border border-gray-200 rounded-lg focus:ring-2 focus:ring-[#2b62e3] focus:border-[#2b62e3] transition-colors duration-200"
+                            placeholder="Describe the activity..."
+                            required
+                        ></textarea>
+                    </div>
+                    <div class="grid grid-cols-1 md:grid-cols-2 gap-4">
+                        <div>
+                            <label class="block text-sm font-medium text-gray-700 mb-1">Price</label>
+                            <div class="relative">
+                                <div class="absolute inset-y-0 left-0 pl-3 flex items-center pointer-events-none">
+                                    <span class="text-gray-500">$</span>
+                                </div>
+                                <input 
+                                    type="number" 
+                                    name="price"
+                                    class="w-full pl-8 pr-4 py-2 border border-gray-200 rounded-lg focus:ring-2 focus:ring-[#2b62e3] focus:border-[#2b62e3] transition-colors duration-200"
+                                    placeholder="0.00"
+                                    step="0.01"
+                                    min="0"
+                                    required
+                                >
+                            </div>
+                        </div>
+                    </div>
+                    <div class="grid grid-cols-1 md:grid-cols-2 gap-4">
+                        <div>
+                            <label class="block text-sm font-medium text-gray-700 mb-1">Start Date</label>
+                            <input 
+                                type="date" 
+                                name="date_start"
+                                class="w-full px-4 py-2 border border-gray-200 rounded-lg focus:ring-2 focus:ring-[#2b62e3] focus:border-[#2b62e3] transition-colors duration-200"
+                                required
+                            >
+                        </div>
+                        
+                        <div>
+                            <label class="block text-sm font-medium text-gray-700 mb-1">End Date</label>
+                            <input 
+                                type="date" 
+                                name="date_fin"
+                                class="w-full px-4 py-2 border border-gray-200 rounded-lg focus:ring-2 focus:ring-[#2b62e3] focus:border-[#2b62e3] transition-colors duration-200"
+                                required
+                            >
+                        </div>
                     </div>
                     <div>
-                        <label class="block text-sm font-medium mb-1">Price</label>
-                        <input type="number" class="w-full p-2 border rounded-lg focus:ring-2 focus:ring-blue-500 outline-none" 
-                               placeholder="Enter price">
+                            <label class="block text-sm font-medium text-gray-700 mb-1">Available Places</label>
+                            <input 
+                                type="number" 
+                                name="available_places"
+                                class="w-full px-4 py-2 border border-gray-200 rounded-lg focus:ring-2 focus:ring-[#2b62e3] focus:border-[#2b62e3] transition-colors duration-200"
+                                placeholder="Enter number of spots"
+                                min="1"
+                                required
+                            >
                     </div>
-                    <div>
-                        <label class="block text-sm font-medium mb-1">Duration (hours)</label>
-                        <input type="number" class="w-full p-2 border rounded-lg focus:ring-2 focus:ring-blue-500 outline-none" 
-                               placeholder="Enter duration">
-                    </div>
-                    <div class="flex justify-end space-x-2 pt-4">
-                        <button onclick="document.getElementById('addActivityModal').classList.add('hidden')" 
-                                type="button"
-                                class="px-4 py-2 border border-gray-300 rounded-lg hover:bg-gray-50 transition-colors">
+                    <div class="flex justify-end space-x-3 pt-6 border-t">
+                        <button 
+                            type="button"
+                            onclick="closeModal()"
+                            class="px-6 py-2.5 text-sm font-medium text-gray-700 bg-gray-100 hover:bg-gray-200 rounded-lg transition-colors duration-200"
+                        >
                             Cancel
                         </button>
-                        <button type="submit" 
-                                class="px-4 py-2 bg-blue-600 text-white rounded-lg hover:bg-blue-700 transition-colors">
-                            Add Activity
+                        <button 
+                            type="submit"
+                            class="px-6 py-2.5 text-sm font-medium text-white bg-[#2b62e3] hover:bg-blue-600 rounded-lg transition-colors duration-200"
+                        >
+                            Save Activity
                         </button>
                     </div>
                 </form>
@@ -171,6 +234,14 @@
                 this.classList.add('hidden');
             }
         });
+
+        function closeModal() {
+        const modal = document.getElementById('addActivityModal');
+        modal.classList.remove('opacity-100');
+        setTimeout(() => {
+            modal.classList.add('hidden');
+        }, 300);
+    }
     </script>
 </body>
 </html>

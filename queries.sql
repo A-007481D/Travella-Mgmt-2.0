@@ -12,6 +12,7 @@ CREATE TABLE client (
 CREATE TABLE activite (
     id_activite INT AUTO_INCREMENT PRIMARY KEY,
     name VARCHAR(255) NOT NULL,
+    img varchar(150);
     description text,
     price DECIMAL(10, 2) NOT NULL,
     date_start DATETIME NOT NULL,

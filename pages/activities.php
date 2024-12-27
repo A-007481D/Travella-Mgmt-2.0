@@ -119,7 +119,7 @@ session_start();
                             </div>
                         </div>
                         <div class="flex items-center gap-4 text-sm text-gray-500 mb-4">
-                            <span>⏰ 3 hours</span>
+                            <span>⏰ 3 hours - 5 hours</span>
                             <span>👥 Max 8 people</span>
                             <span class="text-yellow-400">★★★★★</span>
                         </div>
