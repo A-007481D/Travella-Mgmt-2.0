@@ -1,6 +1,7 @@
 <?php
 session_start(); 
 require_once("../processes/activityProcess.php");
+$id = null;
 if (isset($_SESSION["id"])) {
     $id = $_SESSION["id"];
 }

@@ -1,4 +1,5 @@
-<?php session_start(); ?>
+<?php session_start();
+require_once '../processes/userProcess.php'; ?>
 
 <!DOCTYPE html>
 <html lang="en">
@@ -92,24 +93,10 @@
                                 </tr>
                             </thead>
                             <tbody>
-                                <tr class="border-b">
-                                    <td class="p-4">-</td>
-                                    <td class="p-4">-</td>
-                                    <td class="p-4">-</td>
-                                    <td class="p-4">-</td>
-                                    <td class="p-4">-</td>
-                                    <td class="p-4 space-x-2">
-                                        <button class="px-3 py-1 bg-gray-200 text-gray-700 rounded hover:bg-gray-300 transition-colors">
-                                            Archive
-                                        </button>
-                                        <button class="px-3 py-1 bg-red-500 text-white rounded hover:bg-red-600 transition-colors">
-                                            Ban
-                                        </button>
-                                        <button class="px-3 py-1 border border-gray-300 text-gray-700 rounded hover:bg-gray-50 transition-colors">
-                                            Promote
-                                        </button>
-                                    </td>
-                                </tr>
+                                <?php 
+                                $afficheclient = new  UserP();
+                                $afficheclient->AfficheClient();
+                                ?>
                             </tbody>
                         </table>
                     </div>

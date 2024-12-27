@@ -45,11 +45,24 @@ class Reservation extends Database{
                         <button class='px-3 py-1 bg-blue-500 text-white rounded hover:bg-blue-600 transition-colors'>
                             View Details
                         </button>
-                        <button class='px-3 py-1 bg-red-500 text-white rounded hover:bg-red-600 transition-colors'>
+                        <form method = 'POST' action='../processes/reservationProcess.php'>
+                        <input name='cancel' type = 'hidden' value = '" . $res['id_reservation'] . "'>
+                        <button type='submit' class='px-3 py-1 bg-red-500 text-white rounded hover:bg-red-600 transition-colors'>
                             Cancel
                         </button>
+                        </form>
                     </td>
                 </tr>";
+        }
+    }
+
+    public function CanceledReservation($canceled){
+        $sql = "DELETE FROM reservation WHERE id_reservation = :canceled";
+        $stmt = $this->conn->prepare($sql);
+        $stmt->bindParam(':canceled', $canceled);
+        $result = $stmt->execute();
+        if ($result) {
+            header("location: ../pages/profile.php");
         }
     }
 }
@@ -57,10 +70,15 @@ class Reservation extends Database{
 if ($_SERVER["REQUEST_METHOD"] === "POST") {
     $id_act = $_POST["id_activities"];
     $id_cl = $_POST["id_client"];
+    $canceled = $_POST["cancel"];
     if (isset($id_cl, $id_act)) {
         $addreservation = new Reservation();
         $addreservation->AddReservation($id_cl, $id_act);
     }
 
+    if (isset($canceled)) {
+        $cancelTheReservation = new Reservation();
+        $cancelTheReservation->CanceledReservation($canceled);
+    }
 }
 ?>
