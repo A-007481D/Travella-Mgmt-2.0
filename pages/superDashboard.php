@@ -1,3 +1,5 @@
+<?php session_start(); ?>
+
 <!DOCTYPE html>
 <html lang="en">
 <head>
@@ -8,6 +10,7 @@
 </head>
 <body class="bg-gray-100">
     <div class="flex h-screen">
+        <!-- Sidebar -->
         <aside class="w-64 bg-white shadow-lg">
             <div class="p-6">
                 <a href="../../index.php" class="text-2xl font-bold text-blue-600">Travella</a>
@@ -15,7 +18,7 @@
             
             <nav class="mt-6 px-6">
                 <div class="space-y-4">
-                    <a href="../../index.php" class="flex items-center px-4 py-2 text-gray-700 hover:bg-blue-50 hover:text-blue-600 rounded-lg transition-colors">
+                    <a href="../index.php" class="flex items-center px-4 py-2 text-gray-700 hover:bg-blue-50 hover:text-blue-600 rounded-lg transition-colors">
                         <span class="mr-3">🏠</span>
                         Home
                     </a>
@@ -43,10 +46,12 @@
             </div>
         </aside>
 
+        <!-- Main Content -->
         <main class="flex-1 overflow-y-auto">
             <div class="p-8">
                 <div class="flex justify-between items-center mb-8">
                     <h1 class="text-2xl font-bold text-gray-800">Super Admin Dashboard</h1>
+                    <!-- Add Activity Button -->
                     <button onclick="document.getElementById('addActivityModal').classList.remove('hidden')" 
                             class="px-4 py-2 bg-blue-600 text-white rounded-lg hover:bg-blue-700 transition-colors flex items-center">
                         <span class="mr-2">+</span>
