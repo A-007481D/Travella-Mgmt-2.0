@@ -59,7 +59,6 @@
                     </button>
                 </div>
 
-                <!-- Stats Grid -->
                 <div class="grid grid-cols-1 md:grid-cols-3 gap-6 mb-8">
                     <div class="bg-white p-6 rounded-lg shadow-md">
                         <h2 class="text-lg font-medium text-gray-700">Pending Reservations</h2>

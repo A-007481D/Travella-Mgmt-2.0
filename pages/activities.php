@@ -38,7 +38,7 @@ if (isset($_SESSION["id"])) {
                     </button>";
                         }else {
                             echo " <button class='bg-blue-600 px-6 py-2 rounded-full hover:bg-blue-700 transition-all transform hover:scale-105 duration-200'>
-                        <a href='#' class='text-white'>client</a>
+                        <a href='profile.php' class='text-white'>client</a>
                     </button>";
                         }
                     }
