@@ -1,6 +1,10 @@
-<?php 
+<?php
+session_start(); 
 require_once("../processes/activityProcess.php");
-session_start();
+$id = null;
+if (isset($_SESSION["id"])) {
+    $id = $_SESSION["id"];
+}
 
 ?>
 <!DOCTYPE html>
@@ -8,7 +12,7 @@ session_start();
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Travella - Book Your Next Adventure</title>
+    <title>travella Activities</title>
     <script src="https://cdn.tailwindcss.com"></script>
 </head>
 <body class="bg-gray-50">
@@ -26,16 +30,16 @@ session_start();
                     <?php
                     if (!isset($_SESSION["client_email"])) {
                         echo " <button class='bg-blue-600 px-6 py-2 rounded-full hover:bg-blue-700 transition-all transform hover:scale-105 duration-200'>
-                        <a href='pages/login.php' class='text-white'>Sign In</a>
+                        <a href='login.php' class='text-white'>Sign In</a>
                     </button>";
                     }else {
                         if ($_SESSION["client_email"] === "admin@gmail.com") {
                             echo " <button class='bg-blue-600 px-6 py-2 rounded-full hover:bg-blue-700 transition-all transform hover:scale-105 duration-200'>
-                        <a href='#' class='text-white'>admin</a>
+                        <a href='superDashboard.php' class='text-white'>admin</a>
                     </button>";
                         }else {
                             echo " <button class='bg-blue-600 px-6 py-2 rounded-full hover:bg-blue-700 transition-all transform hover:scale-105 duration-200'>
-                        <a href='#' class='text-white'>client</a>
+                        <a href='profile.php' class='text-white'>client</a>
                     </button>";
                         }
                     }
@@ -57,7 +61,7 @@ session_start();
                 <p class="text-xl mb-8 max-w-2xl">
                     Find and book the best local experiences, guided tours, and exciting activities in your area.
                 </p>
-            </div>
+            </div>mahdiiiii
         </div>
     </div>
 
@@ -103,99 +107,10 @@ session_start();
         <div class="max-w-7xl mx-auto px-4">
             <h2 class="text-3xl font-bold mb-8">Featured Activities</h2>
             <div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-8">
-
-                <div class="group rounded-xl overflow-hidden shadow-lg hover:shadow-2xl transition-all duration-300">
-                    <div class="relative">
-                        <img src="../img/montain.jpg" alt="Mountain Biking" class="w-full h-64 object-cover transform group-hover:scale-105 transition-transform duration-300" />
-                        <div class="absolute top-4 right-4 bg-white/90 backdrop-blur-sm px-3 py-1 rounded-full">
-                            <span class="text-blue-600 font-semibold">$89/person</span>
-                        </div>
-                    </div>
-                    <div class="p-6 bg-white">
-                        <div class="flex justify-between items-start mb-4">
-                            <div>
-                                <h3 class="text-xl font-bold text-gray-900">Mountain Biking Adventure</h3>
-                                <p class="text-gray-500">with Expert Guide Mike</p>
-                            </div>
-                        </div>
-                        <div class="flex items-center gap-4 text-sm text-gray-500 mb-4">
-                            <span>⏰ 3 hours - 5 hours</span>
-                            <span>👥 Max 8 people</span>
-                            <span class="text-yellow-400">★★★★★</span>
-                        </div>
-                        <p class="text-gray-600 mb-6">Exciting mountain trails with stunning views. All equipment provided.</p>
-                        <div class="flex gap-3">
-                            <button class="flex-1 bg-blue-600 text-white py-2.5 rounded-xl hover:bg-blue-700 transition-colors">
-                                Book Now
-                            </button>
-                            <button class="px-4 py-2.5 border border-blue-600 text-blue-600 rounded-xl hover:bg-blue-50 transition-colors">
-                                Details
-                            </button>
-                        </div>
-                    </div>
-                </div>
-
-                <div class="group rounded-xl overflow-hidden shadow-lg hover:shadow-2xl transition-all duration-300">
-                    <div class="relative">
-                        <img src="../img/climbing.jpg" alt="Rock Climbing" class="w-full h-64 object-cover transform group-hover:scale-105 transition-transform duration-300" />
-                        <div class="absolute top-4 right-4 bg-white/90 backdrop-blur-sm px-3 py-1 rounded-full">
-                            <span class="text-blue-600 font-semibold">$75/person</span>
-                        </div>
-                    </div>
-                    <div class="p-6 bg-white">
-                        <div class="flex justify-between items-start mb-4">
-                            <div>
-                                <h3 class="text-xl font-bold text-gray-900">Rock Climbing Class</h3>
-                                <p class="text-gray-500">with Instructor Sarah</p>
-                            </div>
-                        </div>
-                        <div class="flex items-center gap-4 text-sm text-gray-500 mb-4">
-                            <span>⏰ 4 hours</span>
-                            <span>👥 Max 6 people</span>
-                            <span class="text-yellow-400">★★★★½</span>
-                        </div>
-                        <p class="text-gray-600 mb-6">Learn rock climbing basics in a safe environment. Beginners welcome.</p>
-                        <div class="flex gap-3">
-                            <button class="flex-1 bg-blue-600 text-white py-2.5 rounded-xl hover:bg-blue-700 transition-colors">
-                                Book Now
-                            </button>
-                            <button class="px-4 py-2.5 border border-blue-600 text-blue-600 rounded-xl hover:bg-blue-50 transition-colors">
-                                Details
-                            </button>
-                        </div>
-                    </div>
-                </div>
-
-                <div class="group rounded-xl overflow-hidden shadow-lg hover:shadow-2xl transition-all duration-300">
-                    <div class="relative">
-                        <img src="../img/japanac.jpg" alt="Kayaking" class="w-full h-64 object-cover transform group-hover:scale-105 transition-transform duration-300" />
-                        <div class="absolute top-4 right-4 bg-white/90 backdrop-blur-sm px-3 py-1 rounded-full">
-                            <span class="text-blue-600 font-semibold">$65/person</span>
-                        </div>
-                    </div>
-                    <div class="p-6 bg-white">
-                        <div class="flex justify-between items-start mb-4">
-                            <div>
-                                <h3 class="text-xl font-bold text-gray-900">Lake Kayaking Tour</h3>
-                                <p class="text-gray-500">with Guide Emma</p>
-                            </div>
-                        </div>
-                        <div class="flex items-center gap-4 text-sm text-gray-500 mb-4">
-                            <span>⏰ 2 hours</span>
-                            <span>👥 Max 10 people</span>
-                            <span class="text-yellow-400">★★★★★</span>
-                        </div>
-                        <p class="text-gray-600 mb-6">Peaceful lake exploration with scenic mountain views.</p>
-                        <div class="flex gap-3">
-                            <button class="flex-1 bg-blue-600 text-white py-2.5 rounded-xl hover:bg-blue-700 transition-colors">
-                                Book Now
-                            </button>
-                            <button class="px-4 py-2.5 border border-blue-600 text-blue-600 rounded-xl hover:bg-blue-50 transition-colors">
-                                Details
-                            </button>
-                        </div>
-                    </div>
-                </div>
+               <?php
+               $aficheActivities = new Activities();
+               $aficheActivities->AfficheActivities($id); 
+               ?>
             </div>
         </div>
     </section>
@@ -263,7 +178,7 @@ session_start();
                         </div>
                     </div>
                     <p class="text-gray-600">
-                        "Bad mountain hiking experience! The guide was unprofessional."
+                    "Amazing mountain biking experience! The guide was professional and the trails were perfect for all skill levels."
                     </p>
                 </div>
             </div>
@@ -275,7 +190,7 @@ session_start();
             <div>
                 <div class="flex items-center space-x-2 mb-4">
                     <span class="text-3xl">✈️</span>
-                    <span class="text-2xl font-bold">Travella</span>
+                    <span class="text-2xl font-bold">Voyage</span>
                 </div>
                 <p class="text-gray-400">Your trusted travel companion</p>
             </div>
@@ -294,7 +209,7 @@ session_start();
                     <li>123 Travel Street</li>
                     <li>New York, NY 10001</li>
                     <li>Phone: (555) 123-4567</li>
-                    <li>Email: info@travella.com</li>
+                    <li>Email: info@voyage.com</li>
                 </ul>
             </div>
             <div>

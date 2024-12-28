@@ -1,11 +1,10 @@
 <?php require_once '../processes/AuthProcess.php'; ?>
-
 <!DOCTYPE html>
 <html lang="en">
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Travella - Authentication</title>
+    <title>ActivityHub - Authentication</title>
     <script src="https://cdn.tailwindcss.com"></script>
     <script>
         tailwind.config = {
@@ -35,7 +34,7 @@
                     <a href="activities.php" class="text-gray-600 hover:text-blue-600 transition-colors duration-300">Activities</a>
                     <a href="#" class="text-gray-600 hover:text-blue-600 transition-colors duration-300">About</a>
                     <button class="bg-blue-600 px-6 py-2 rounded-full text-white hover:bg-blue-700 transition-all transform hover:scale-105 duration-200 shadow-lg hover:shadow-blue-500/50">
-                        <a href="./login.php">Sign In</a>
+                        <a href="login.php">Sign In</a>
                     </button>
                 </div>
             </div>
@@ -117,11 +116,11 @@
                         <div class="grid grid-cols-2 gap-4">
                             <div>
                                 <label class="block text-gray-700 text-sm font-semibold mb-2">First Name</label>
-                                <input name="first_name" type="text" class="w-full px-4 py-3 rounded-lg bg-gray-50 border border-gray-200 focus:border-blue-500 focus:bg-white focus:outline-none transition duration-200" placeholder="First name">
+                                <input name="name" type="text" class="w-full px-4 py-3 rounded-lg bg-gray-50 border border-gray-200 focus:border-blue-500 focus:bg-white focus:outline-none transition duration-200" placeholder="First name">
                             </div>
                             <div>
                                 <label class="block text-gray-700 text-sm font-semibold mb-2">Last Name</label>
-                                <input name="last_name" type="text" class="w-full px-4 py-3 rounded-lg bg-gray-50 border border-gray-200 focus:border-blue-500 focus:bg-white focus:outline-none transition duration-200" placeholder="Last name">
+                                <input name="prenom" type="text" class="w-full px-4 py-3 rounded-lg bg-gray-50 border border-gray-200 focus:border-blue-500 focus:bg-white focus:outline-none transition duration-200" placeholder="Last name">
                             </div>
                         </div>
                         
@@ -186,7 +185,7 @@
             <div>
                 <div class="flex items-center space-x-2 mb-4">
                     <span class="text-3xl">✈️</span>
-                    <span class="text-2xl font-bold">Travella</span>
+                    <span class="text-2xl font-bold">Voyage</span>
                 </div>
                 <p class="text-gray-400">Your trusted travel companion</p>
             </div>
@@ -205,7 +204,7 @@
                     <li>123 Travel Street</li>
                     <li>New York, NY 10001</li>
                     <li>Phone: (555) 123-4567</li>
-                    <li>Email: info@travella.com</li>
+                    <li>Email: info@voyage.com</li>
                 </ul>
             </div>
             <div>

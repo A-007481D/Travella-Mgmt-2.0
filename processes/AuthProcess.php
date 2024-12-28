@@ -7,7 +7,7 @@ class User extends Database {
     }
 
     public function Registerdata($name, $prenom, $email, $number, $password){
-        $sql = "INSERT INTO client (first_name, last_name, email, number, password) VALUES (:first_name, :last_name, :number, :password)";
+        $sql = "INSERT INTO client (first_name, last_name, email, number, password) VALUES (:name, :prenom, :email, :number, :password)";
         $stmt = $this->conn->prepare($sql);
         $hashpassword = password_hash($password, PASSWORD_DEFAULT);
         $stmt->bindParam(':name', $name);
@@ -31,7 +31,7 @@ class User extends Database {
         if ($result) {
             if (password_verify($password, $result["password"])) {
                 $_SESSION["client_email"] = $result["email"];
-                $_SESSION["client_password"] = $result["password"];
+                $_SESSION["id"] = $result["id_client"];
                 if ($email === 'admin@gmail.com') {
                     $_SESSION["admin"] = true;
                     header("location: ../index.php");
@@ -44,8 +44,8 @@ class User extends Database {
     }
 }
 if ($_SERVER["REQUEST_METHOD"] == "POST") {
-    $first_name = $_POST["first_name"];
-    $last_name = $_POST["last_name"];
+    $name = $_POST["name"];
+    $prenom = $_POST["prenom"];
     $email = $_POST["email"];
     $number = $_POST["number"];
     $password = $_POST["password"];
@@ -53,12 +53,12 @@ if ($_SERVER["REQUEST_METHOD"] == "POST") {
     $email_login = $_POST["email_login"];
 
     if (isset($name, $prenom, $email, $number, $password)) {
-        $register = new User();
-        $register->Registerdata($name, $prenom, $email, $number, $password);
+        $registre = new User();
+        $registre->Registerdata($name, $prenom, $email, $number, $password);
     }
     if (isset($email_login, $password_login)) {
-        $register = new User();
-        $register->Login($email_login, $password_login);
+        $registre = new User();
+        $registre->Login($email_login, $password_login);
     }
 }
  ?>

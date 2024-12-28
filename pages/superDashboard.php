@@ -1,4 +1,5 @@
-<?php session_start(); ?>
+<?php session_start();
+require_once '../processes/userProcess.php'; ?>
 
 <!DOCTYPE html>
 <html lang="en">
@@ -26,7 +27,7 @@
                         <span class="mr-3">📜</span>
                         Reservations
                     </a>
-                    <a href="#" class="flex items-center px-4 py-2 text-gray-700 hover:bg-blue-50 hover:text-blue-600 rounded-lg transition-colors">
+                    <a href="activities.php" class="flex items-center px-4 py-2 text-gray-700 hover:bg-blue-50 hover:text-blue-600 rounded-lg transition-colors">
                         <span class="mr-3">🎯</span>
                         Activities
                     </a>
@@ -59,7 +60,6 @@
                     </button>
                 </div>
 
-                <!-- Stats Grid -->
                 <div class="grid grid-cols-1 md:grid-cols-3 gap-6 mb-8">
                     <div class="bg-white p-6 rounded-lg shadow-md">
                         <h2 class="text-lg font-medium text-gray-700">Pending Reservations</h2>
@@ -93,24 +93,10 @@
                                 </tr>
                             </thead>
                             <tbody>
-                                <tr class="border-b">
-                                    <td class="p-4">-</td>
-                                    <td class="p-4">-</td>
-                                    <td class="p-4">-</td>
-                                    <td class="p-4">-</td>
-                                    <td class="p-4">-</td>
-                                    <td class="p-4 space-x-2">
-                                        <button class="px-3 py-1 bg-gray-200 text-gray-700 rounded hover:bg-gray-300 transition-colors">
-                                            Archive
-                                        </button>
-                                        <button class="px-3 py-1 bg-red-500 text-white rounded hover:bg-red-600 transition-colors">
-                                            Ban
-                                        </button>
-                                        <button class="px-3 py-1 border border-gray-300 text-gray-700 rounded hover:bg-gray-50 transition-colors">
-                                            Promote
-                                        </button>
-                                    </td>
-                                </tr>
+                                <?php 
+                                $afficheclient = new  UserP();
+                                $afficheclient->AfficheClient();
+                                ?>
                             </tbody>
                         </table>
                     </div>
