@@ -48,9 +48,14 @@ class Activities extends Database{
                     </div>
                     <p class="text-gray-600 mb-6">' . $result["description"] . '</p>
                     <div class="flex gap-3">
+                    <form method="POST" action="../processes/reservationProcess.php">
+                        <input name = "id_activities" type="hidden" value="'.$result["id_activite"].'">
+                        <input name = "id_client" type="hidden" value="'. $client_id .'">
+
                     <form method="POST" action="../processes/activityProcess.php">
                         <input type="" value="'.$result["id_activite"].'">
                         <input type="" value="'. $client_id .'">
+
                         <button type="submit" class="flex-1 bg-blue-600 text-white w-[5rem] py-2.5 rounded-xl hover:bg-blue-700 transition-colors">
                             Book Now
                         </button>
@@ -61,13 +66,6 @@ class Activities extends Database{
                     </div>
                 </div>
             </div>';
-        }
-    }
-
-    public function AddReservation(){
-        
-    }
-}
 
 if ($_SERVER["REQUEST_METHOD"] === "POST") {
     $name = $_POST["activity_name"];
@@ -77,7 +75,9 @@ if ($_SERVER["REQUEST_METHOD"] === "POST") {
     $date_start = $_POST["date_start"];
     $date_fin = $_POST["date_fin"];
     $places_desponsibles = $_POST["available_places"];
-    $activitiesInserted = new Activities();
-    $activitiesInserted->Addactivities($name, $image, $description, $price, $date_start, $date_fin, $places_desponsibles);
+    if (isset($name, $image, $description, $price, $date_start, $date_fin, $places_desponsibles)){
+        $activitiesInserted = new Activities();
+        $activitiesInserted->Addactivities($name, $image, $description, $price, $date_start, $date_fin, $places_desponsibles);
+}
 }
 ?>
