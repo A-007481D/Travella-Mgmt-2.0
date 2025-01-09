@@ -51,6 +51,11 @@ class Activities extends Database{
                     <form method="POST" action="../processes/reservationProcess.php">
                         <input name = "id_activities" type="hidden" value="'.$result["id_activite"].'">
                         <input name = "id_client" type="hidden" value="'. $client_id .'">
+
+                    <form method="POST" action="../processes/activityProcess.php">
+                        <input type="" value="'.$result["id_activite"].'">
+                        <input type="" value="'. $client_id .'">
+
                         <button type="submit" class="flex-1 bg-blue-600 text-white w-[5rem] py-2.5 rounded-xl hover:bg-blue-700 transition-colors">
                             Book Now
                         </button>
@@ -61,10 +66,6 @@ class Activities extends Database{
                     </div>
                 </div>
             </div>';
-        }
-    }
-
-}
 
 if ($_SERVER["REQUEST_METHOD"] === "POST") {
     $name = $_POST["activity_name"];

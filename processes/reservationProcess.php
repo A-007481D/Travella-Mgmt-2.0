@@ -80,5 +80,3 @@ if ($_SERVER["REQUEST_METHOD"] === "POST") {
         $cancelTheReservation = new Reservation();
         $cancelTheReservation->CanceledReservation($canceled);
     }
-}
-?>

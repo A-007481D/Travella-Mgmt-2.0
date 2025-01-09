@@ -1,6 +1,4 @@
-CREATE DATABASE voyage_v2;
-USE voyage_v2;
-CREATE TABLE client (
+CREATE TABLE users (
     id_client INT AUTO_INCREMENT PRIMARY KEY,
     first_name varchar(100),
     last_name varchar(100),
@@ -9,7 +7,7 @@ CREATE TABLE client (
     password varchar(150),
     date_of_birth date
 );
-CREATE TABLE activite (
+CREATE TABLE vehicles (
     id_activite INT AUTO_INCREMENT PRIMARY KEY,
     name VARCHAR(255) NOT NULL,
     img varchar(150);
@@ -21,12 +19,31 @@ CREATE TABLE activite (
     created_date TIMESTAMP DEFAULT CURRENT_TIMESTAMP
 );
 
-CREATE TABLE reservation (
+CREATE TABLE categories (
     id_reservation int(11) AUTO_INCREMENT PRIMARY KEY,
     id_client int(11),
     id_activite int(11),
     reservation_date TIMESTAMP DEFAULT CURRENT_TIMESTAMP,
-    status enum('En attent', 'Confirmée', 'Annulée') ,
+    status enum('Pending', 'Confirmed', 'Cancelled') DEFAULT 'Pending' ,
+    FOREIGN KEY (id_client) REFERENCES client(id_client),
+    FOREIGN KEY (id_activite) REFERENCES activite(id_activite) 
+);
+CREATE TABLE reservations (
+    id_reservation int(11) AUTO_INCREMENT PRIMARY KEY,
+    id_client int(11),
+    id_activite int(11),
+    reservation_date TIMESTAMP DEFAULT CURRENT_TIMESTAMP,
+    status enum('Pending', 'Confirmed', 'Cancelled') DEFAULT 'Pending' ,
+    FOREIGN KEY (id_client) REFERENCES client(id_client),
+    FOREIGN KEY (id_activite) REFERENCES activite(id_activite) 
+);
+
+CREATE TABLE reviews (
+    id_reservation int(11) AUTO_INCREMENT PRIMARY KEY,
+    id_client int(11),
+    id_activite int(11),
+    reservation_date TIMESTAMP DEFAULT CURRENT_TIMESTAMP,
+    status enum('Pending', 'Confirmed', 'Cancelled') DEFAULT 'Pending' ,
     FOREIGN KEY (id_client) REFERENCES client(id_client),
     FOREIGN KEY (id_activite) REFERENCES activite(id_activite) 
 );
@@ -34,6 +51,6 @@ CREATE TABLE reservation (
 CREATE TABLE role (
     id int AUTO_INCREMENT PRIMARY KEY,
     id_client int(11),
-    role enum('visiteur', 'client', 'admin') DEFAULT 'visiteur';
+    role enum('client', 'admin');
     FOREIGN KEY (id_client) REFERENCES client(id_client)
 )
