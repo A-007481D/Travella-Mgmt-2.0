@@ -1,4 +1,4 @@
-<?php require_once '../processes/userProcess.php'; ?>
+<?php require_once '../processes/activityProcess.php'; ?>
 
 <!DOCTYPE html>
 <html lang="en">
@@ -25,11 +25,11 @@
         </a>
     
         <a class="text-gray-700 hover:text-[#2b62e3] cursor-pointer" href="./manageActivities.php">
-            <li class="text-gray-700 hover:text-[#2b62e3] cursor-pointer">Activities</li>
+            <li class="text-[#2b62e3] font-bold">Activities</li>
         </a>
 
         <a class="text-gray-700 hover:text-[#2b62e3] cursor-pointer" href="./manageUsers.php">
-            <li class="text-[#2b62e3] font-bold">Manage Users</li>
+            <li class="text-gray-700 hover:text-[#2b62e3] cursor-pointer">Manage Users</li>
         </a>
 
       </ul>
@@ -79,7 +79,7 @@
   </section>
 
   <section class="bg-white p-6 rounded-lg shadow-md">
-    <h2 class="text-xl font-semibold text-gray-700 mb-4">Manage Users</h2>
+    <h2 class="text-xl font-semibold text-gray-700 mb-4">Manage Activities</h2>
     <table class="w-full text-left border-collapse">
         <thead>
             <tr>
@@ -87,6 +87,7 @@
                 <th class="p-2 border-b">Client</th>
                 <th class="p-2 border-b">Activity</th>
                 <th class="p-2 border-b">Booking Date</th>
+                <th class="p-2 border-b">People</th>
                 <th class="p-2 border-b">Status</th>
                 <th class="p-2 border-b">Booked At</th>
                 <th class="p-2 border-b">Actions</th>
@@ -124,11 +125,11 @@
                     <td class="p-2 border-b"><?= $row['Status']; ?></td>
                     <td class="p-2 border-b"><?= $row['CreatedAt']; ?></td>
                     <td class="p-2 border-b">
-                        <form action="../../update_reservation.php" method="POST" class="inline-block">
+                        <form action="#action" method="POST" class="inline-block">
                             <input type="hidden" name="booking_id" value="<?= $row['BookingID']; ?>">
                             <button type="submit" name="action" value="approve" class="px-4 py-1 bg-green-500 text-white rounded">Approve</button>
                         </form>
-                        <form action="../../update_reservation.php" method="POST" class="inline-block ml-2">
+                        <form action="#action" method="POST" class="inline-block ml-2">
                             <input type="hidden" name="booking_id" value="<?= $row['BookingID']; ?>">
                             <button type="submit" name="action" value="reject" class="px-4 py-1 bg-red-500 text-white rounded">Cancel</button>
                         </form>

@@ -31,7 +31,7 @@ class User extends Database {
         if ($result) {
             if (password_verify($password, $result["password"])) {
                 $_SESSION["client_email"] = $result["email"];
-                $_SESSION["client_password"] = $result["password"];
+                $_SESSION["id"] = $result["id_client"];
                 if ($email === 'admin@gmail.com') {
                     $_SESSION["admin"] = true;
                     header("location: ../index.php");

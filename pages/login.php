@@ -1,9 +1,4 @@
-<<<<<<< HEAD
-<?php require_once '../processes/loginProcess.php'; ?>
-=======
-<?php 
-require_once("../processes/AuthProcess.php");
-?>
+<?php require_once '../processes/AuthProcess.php'; ?>
 <!DOCTYPE html>
 <html lang="en">
 <head>
@@ -244,4 +239,3 @@ require_once("../processes/AuthProcess.php");
     </script>
 </body>
 </html>
->>>>>>> 7add03f2776cbe3e35fe7f33f947d829aa205c73

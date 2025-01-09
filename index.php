@@ -1,15 +1,17 @@
-<<<<<<< HEAD
-
-<?php echo "hello world"; ?>
-=======
 <?php session_start(); ?>
 <!DOCTYPE html>
 <html lang="en">
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>page home voyage</title>
+    <title>Travella | Home </title>
+    <title>Travella - Discover Your Next Adventure</title>
     <script src="https://cdn.tailwindcss.com"></script>
+    <style>
+        html {
+            scroll-behavior: smooth;
+        }
+    </style>
 </head>
 <body class="bg-gray-50">
 
@@ -17,8 +19,9 @@
         <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
             <div class="flex justify-between h-16 items-center">
                 <div class="flex items-center space-x-2">
-                    <span class="text-3xl font-bold text-blue-600">✈️</span>
-                    <span class="text-2xl font-bold text-blue-800">Travella</span>
+                <a href="index.php" ><span class="text-3xl font-bold text-blue-600">✈️</span>
+                <span class="text-2xl font-bold text-blue-800">Travella</span></a>
+                    
                 </div>
                 <div class="hidden md:flex items-center space-x-8">
                     <a href="index.php" class="text-gray-600 hover:text-blue-600 transition-colors">Home</a>
@@ -27,16 +30,16 @@
                     <?php
                     if (!isset($_SESSION["client_email"])) {
                         echo " <button class='bg-blue-600 px-6 py-2 rounded-full hover:bg-blue-700 transition-all transform hover:scale-105 duration-200'>
-                        <a href='pages/login.php' class='text-white'>Sign In</a>
+                        <a href='pages/login.php'class='text-white'>Sign In</a>
                     </button>";
                     }else {
                         if ($_SESSION["client_email"] === "admin@gmail.com") {
                             echo " <button class='bg-blue-600 px-6 py-2 rounded-full hover:bg-blue-700 transition-all transform hover:scale-105 duration-200'>
-                        <a href='pages/superDashboard.php' class='text-white'>admin</a>
+                        <a href='../pages/superDashboard.php' class='text-white'>admin</a>
                     </button>";
                         }else {
                             echo " <button class='bg-blue-600 px-6 py-2 rounded-full hover:bg-blue-700 transition-all transform hover:scale-105 duration-200'>
-                        <a href='pages/profile.php' class='text-white'>client</a>
+                        <a href='../pages/profile.php' class='text-white'>client</a>
                     </button>";
                         }
                     }
@@ -53,25 +56,26 @@
             <div class="absolute inset-0 bg-black/50"></div>
             <div class="relative max-w-7xl ml-8 mt-[-5rem] px-4 sm:px-6 lg:px-8 text-white py-32">
                 <h1 class="text-5xl md:text-[6.5rem] font-bold mb-6">
-                    Explore the World<br />
+                    Explore the World <br/>
                     With Us
                 </h1>
                 <p class="text-xl mb-8 max-w-2xl">
                     Discover breathtaking destinations and create unforgettable memories. Your next adventure begins here.
                 </p>
                 <div class="flex flex-col sm:flex-row gap-4">
-                    <button class="bg-blue-600 text-white px-8 py-3 rounded-full hover:bg-blue-700 transition-colors inline-flex items-center justify-center">
+                    <a href="../pages/activities.php"><button class="bg-blue-600 text-white px-8 py-3 rounded-full hover:bg-blue-700 transition-colors inline-flex items-center justify-center">
                         Start Your Journey
-                    </button>
-                    <button class="bg-white text-gray-900 px-8 py-3 rounded-full hover:bg-gray-100 transition-colors inline-flex items-center justify-center">
+                    </button></a>
+                    <a href="#destinations"><button class="bg-white text-gray-900 px-8 py-3 rounded-full hover:bg-gray-100 transition-colors inline-flex items-center justify-center">
                         View Destinations
-                    </button>
+                    </button></a>
+                    
                 </div>
             </div>
         </div>
     </div>
 
-    <section class="py-20 bg-white">
+    <section id="destinations" class="py-20 bg-white">
         <div class="max-w-7xl mx-auto px-4">
             <h2 class="text-4xl font-bold text-center mb-16">Popular Destinations</h2>
             <div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-8">
@@ -208,4 +212,3 @@
     </footer>
 </body>
 </html>
->>>>>>> 7add03f2776cbe3e35fe7f33f947d829aa205c73
